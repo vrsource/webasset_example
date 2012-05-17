@@ -1,0 +1,12 @@
+# ignore all pyc files
+*.pyc
+*.pyo
+
+# VIM files
+*~
+*.swp
+
+# OSX Stuff
+.DS_Store
+
+

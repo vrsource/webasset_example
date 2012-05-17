@@ -1,0 +1,19 @@
+Example of trying to use webassets to generate an HTML file in debug mode.
+
+What we are trying to do:
+
+Input:
+  * Sass/compass files:  sass/test.scss
+  * Javascript files: src/test_app.js
+  * HTML file: test.html
+  
+Debug Output:
+  * static/build/css/test.css
+  * static/build/test.html   --> reference: static/src/test_app.js, static/build/css/test.css
+
+Prod Output:
+  * static/build/css/min.css
+  * static/build/test_app_min.js
+  * static/build/test.html   --> reference: static/build/test_app_min.js, static/build/css/min.css
+  
+
