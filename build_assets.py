@@ -34,8 +34,8 @@ class HtmlFilter(Filter):
       out.write(_in.read())
       # NOTE: Yet to write this code to replace with CSS and JS references
       out.write('<!-- Was Filtered -->')
-      for b in self.env:
-         out.write('<!-- %s -->' % b.urls())
+      #for b in self.env:
+      #   out.write('<!-- %s -->' % b.urls())
 
 register_filter(HtmlFilter)
 
@@ -52,7 +52,7 @@ def setup_env(debug=True, cache=False):
    env.manifest = False
 
    # Setup Bundles
-   sass = Bundle('sass/test.scss', filters='sass', output=out('css', 'test.css'),
+   sass = Bundle('sass/test.scss', filters='compass', output=out('css', 'test.css'),
                     debug = False)
    css  = Bundle(sass, 'style.css', output=out('css', 'min.css'))
    html = Bundle('test.html', filters='html', output=out('test.html'))
@@ -94,8 +94,6 @@ def build():
    #for b in env:
    #   b.build(force=True, env=env, disable_cache=(not cache))
    
-
-
 
 if __name__ == '__main__':
    build()
