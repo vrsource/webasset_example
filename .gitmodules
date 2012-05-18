@@ -1,0 +1,3 @@
+[submodule "webassets"]
+	path = webassets
+	url = git://github.com/miracle2k/webassets.git
