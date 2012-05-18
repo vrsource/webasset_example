@@ -70,7 +70,7 @@ def out(*args):
 def html_filter(css, js):
    return HtmlFilter(css=css, js=js)
 
-def setup_env(debug=True, cache=False):
+def setup_env(debug=False, cache=False):
    env = Environment(gAssetDir, gAssetUrl)
 
    env.debug    = debug
@@ -82,7 +82,7 @@ def setup_env(debug=True, cache=False):
                     debug = False)
    css  = Bundle(sass, 'style.css', output=out('css', 'min.css'))
    js   = Bundle('src/test_app.js', filters='rjsmin', output=out('test_app_min.js'))
-   html = Bundle('test.html', output=out('test.html'),
+   html = Bundle('test.html', output=out('test.html'), debug = False,
                  filters = html_filter(css=['css'], js=['js']))
 
    # Register bundles
